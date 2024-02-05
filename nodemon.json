@@ -1,0 +1,9 @@
+{
+    "env":{
+        "DB_USER":"harshita",
+        "DB_PASSWORD":"ZK1KNcLrLwkPS9pX",
+        "DB_NAME": "mern",
+        "JWT_KEY": "supersecretinfo",
+        "PORT":"5000"
+    }
+}
