@@ -58,7 +58,7 @@ mongoose
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASSWORD}@cluster0.9bh9deu.mongodb.net/${process.env.DB_NAME}?retryWrites=true&w=majority`
   )
   .then(() => {
-    app.listen(process.env.PORT,()=>{
+    app.listen(process.env.PORT|| 5000,()=>{
       console.log(`server is working`)
     });
   })
