@@ -11,11 +11,11 @@ const userRoutes = require("./routes/users-routes");
 
 const app = express();
 
-app.use(cors({
+/*app.use(cors({
   origin:[process.env.FRONTEND_URL],
   methods:["GET","POST","PATCH","DELETE"],
   credentials: true
-}))
+}))*/
 
 app.use(bodyParser.json());
 
