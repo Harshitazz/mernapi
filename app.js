@@ -16,11 +16,8 @@ const app = express();
 //   methods:["GET","POST","PATCH","DELETE"],
 //   credentials: true
 // }))
-const corsOptions = {
-  origin:'*'
-};
 
-app.use(cors(corsOptions));
+app.use(cors());
 
 app.use(bodyParser.json());
 
