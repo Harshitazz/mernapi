@@ -9,9 +9,7 @@ const cors = require("cors");
 const placesRoutes = require("./routes/places-routes");
 const userRoutes = require("./routes/users-routes");
 
-const dotenv = require("dotenv");
 
-dotenv.config();
 
 const app = express();
 
@@ -24,26 +22,10 @@ app.use(cors({
 
 app.use(bodyParser.json());
 
-const dirname = path.resolve();
 
 app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
-//
-// Serve static files from the frontend build directory in production
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(dirname, '/frontend/build')));
-  
-  // Serve index.html for all other routes
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(dirname, 'frontend', 'build', 'index.html'))
-  );
-} else {
-  // Respond with a simple message for the root route in development
-  app.get('/', (req, res) => {
-    res.send('API running....');
-  });
-}
-//
+
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
