@@ -26,6 +26,8 @@ app.use(bodyParser.json());
 
 const dirname = path.resolve();
 
+app.use("/uploads/images", express.static(path.join("uploads", "images")));
+
 //
 // Serve static files from the frontend build directory in production
 if (process.env.NODE_ENV === 'production') {
@@ -42,7 +44,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 //
-app.use("/uploads/images", express.static(path.join("uploads", "images")));
 
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
